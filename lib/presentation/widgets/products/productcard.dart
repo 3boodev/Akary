@@ -3,10 +3,40 @@ import 'package:akary/constants/theme.dart';
 import 'package:akary/presentation/screens/products/productsdetailscreen.dart';
 import 'package:akary/presentation/widgets/adaptive/textutils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get_storage/get_storage.dart';
+import 'dart:convert';
 
-class ProductCard extends StatelessWidget {
-  const ProductCard({Key? key}) : super(key: key);
+class ProductCard extends StatefulWidget {
+  ProductCard(this.index);
+  int index;
+  @override
+  State<ProductCard> createState() => _ProductCardState(index);
+}
+
+class _ProductCardState extends State<ProductCard> {
+  _ProductCardState(this.index);
+  int index;
+  List<dynamic> productsList = [];
+
+  Future<void> readJson() async {
+    final String response =
+        await rootBundle.loadString('assets/data/products.json');
+    final data = await json.decode(response);
+
+    setState(() {
+      productsList = data['products'];
+      //.map((data) => PlayersModel.fromJson(data)).toList();
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    readJson();
+    print(index);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +63,8 @@ class ProductCard extends StatelessWidget {
                         width: double.infinity,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                            image: NetworkImage(
-                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsojqA-M5BYNXozUF6bWXa3zcw_FWmVF4O3w&usqp=CAU',
-                            ),
+                          image: DecorationImage(
+                            image: NetworkImage(productsList[index]['image']),
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -51,8 +79,8 @@ class ProductCard extends StatelessWidget {
                             color: Colors.grey.shade600,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: const Text(
-                            'FOR RENT',
+                          child: Text(
+                            productsList[index]['type'],
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
@@ -67,8 +95,8 @@ class ProductCard extends StatelessWidget {
                             color: Colors.grey.shade600,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: const Text(
-                            '20-6-2021',
+                          child: Text(
+                            productsList[index]['pub_date'],
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
@@ -90,8 +118,8 @@ class ProductCard extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        const Text(
-                          '20-6-2021',
+                        Text(
+                          productsList[index]['pub_date'],
                           style: TextStyle(
                               color: mainColor,
                               fontWeight: FontWeight.bold,
@@ -124,7 +152,7 @@ class ProductCard extends StatelessWidget {
                     child: TextUtils(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        text: "\t House is Power",
+                        text: productsList[index]['title'],
                         color: GetStorage().read('isDarkTheme') == true
                             ? Colors.white
                             : Colors.black,
@@ -142,12 +170,12 @@ class ProductCard extends StatelessWidget {
                       Container(
                         height: 25,
                         width: 25,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.circle,
                           image: DecorationImage(
                             image: NetworkImage(
-                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsojqA-M5BYNXozUF6bWXa3zcw_FWmVF4O3w&usqp=CAU',
+                              productsList[index]['pub_image'],
                             ),
                             fit: BoxFit.fitHeight,
                           ),
@@ -159,7 +187,7 @@ class ProductCard extends StatelessWidget {
                       TextUtils(
                           fontSize: 12,
                           fontWeight: FontWeight.normal,
-                          text: "Ahmed Mohamed",
+                          text: productsList[index]['pub_name'],
                           color: Colors.grey,
                           underLine: TextDecoration.none)
                     ],
@@ -175,7 +203,7 @@ class ProductCard extends StatelessWidget {
                         TextUtils(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
-                            text: "Flat Home",
+                            text: productsList[index]['des_title'],
                             color: GetStorage().read('isDarkTheme') == true
                                 ? Colors.white
                                 : Colors.black,
@@ -183,19 +211,20 @@ class ProductCard extends StatelessWidget {
                         TextUtils(
                             fontSize: 12,
                             fontWeight: FontWeight.normal,
-                            text: "Beds : 4",
+                            text: "Beds : ${productsList[index]['des_beds']}",
                             color: Colors.grey,
                             underLine: TextDecoration.none),
                         TextUtils(
                             fontSize: 12,
                             fontWeight: FontWeight.normal,
-                            text: "Paths : 2",
+                            text: "Paths : ${productsList[index]['des_paths']}",
                             color: Colors.grey,
                             underLine: TextDecoration.none),
                         TextUtils(
                             fontSize: 12,
                             fontWeight: FontWeight.normal,
-                            text: "Area : 3600 m2",
+                            text:
+                                "Area : ${productsList[index]['des_area']} m2",
                             color: Colors.grey,
                             underLine: TextDecoration.none),
                       ],
@@ -211,7 +240,7 @@ class ProductCard extends StatelessWidget {
             height: 20,
           );
         },
-        itemCount: 6,
+        itemCount: productsList.length,
         shrinkWrap: true,
         physics: const BouncingScrollPhysics(),
       ),

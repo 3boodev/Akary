@@ -15,7 +15,7 @@ class CarouselSliderWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             image: const DecorationImage(
               image: NetworkImage(
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCVKcMlf2tspM4UetaFeumiu-GWH-Xkha0ww&usqp=CAU"),
+                  "https://media-cdn.tripadvisor.com/media/photo-s/06/a8/16/36/mandarin-oriental-bodrum.jpg"),
               fit: BoxFit.cover,
             ),
           ),
@@ -28,7 +28,7 @@ class CarouselSliderWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.0),
             image: const DecorationImage(
               image: NetworkImage(
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh4hatTtUGWBedj3eZVHD3GVqB0xemUc-uDA&usqp=CAU"),
+                  "https://cdn-0.decorextra.com/wp-content/uploads/2015/07/Modern-Two-Level-Pool-House-in-Los-Angeles-Backyard-Pool.jpg"),
               fit: BoxFit.cover,
             ),
           ),
@@ -54,7 +54,7 @@ class CarouselSliderWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.0),
             image: const DecorationImage(
               image: NetworkImage(
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbt3HM-lMqXsJd33eOyE7VUbc_vjlWWDWssGHYWUkwq48yHOmvasIw3hriIuIMnhEM1Ko&usqp=CAU"),
+                  "http://1.bp.blogspot.com/-5Sqxy3onf74/UiSV3tgYQjI/AAAAAAAAYK4/__tzzN-z-4Y/s1600/Modern_Backyard_by_Ritz_Exterior_Design_in_Australia_on_world_of_architecture_06.jpg"),
               fit: BoxFit.cover,
             ),
           ),
@@ -67,7 +67,7 @@ class CarouselSliderWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.0),
             image: const DecorationImage(
               image: NetworkImage(
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4cexhJgM8kKsxubbkBJK9PVO2HFd7KXLORTKGDz2GSz7i5h5-AvCFVTlRssjnSMuYES0&usqp=CAU"),
+                  "https://cdn.decoist.com/wp-content/uploads/2014/02/Cool-backyard-of-minimalist-home-in-white.jpg"),
               fit: BoxFit.cover,
             ),
           ),

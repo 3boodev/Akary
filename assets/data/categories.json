@@ -1,0 +1,48 @@
+{
+  "categories":
+  [
+    {
+      "category_id":0,
+      "title":"Flat",
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/06/a8/16/36/mandarin-oriental-bodrum.jpg",
+      "cate_rate":4.5
+    },
+    {
+      "category_id":1,
+      "title":"Villa",
+      "image": "https://i.pinimg.com/564x/8f/51/f6/8f51f6f1eb2d7cacb5e2c930fbcac7be--balcony-design-fence-design.jpg",
+      "cate_rate":4.2
+    },
+    {
+      "category_id":2,
+      "title":"shaly",
+      "image": "https://www.classictravel.com/Content/Pictures/Hotels/MO/61547/bodrum-villa-paradise-bay-bedroom.jpg",
+      "cate_rate":3.5
+    },
+    {
+      "category_id":3,
+      "title":"Compound",
+      "image": "https://abunawaf.com/wp-content/uploads/2016/04/11-%D8%AA%D8%B5%D9%85%D9%8A%D9%85%D8%A7%D8%AA-%D8%AC%D9%85%D9%8A%D9%84%D8%A9-%D9%84%D9%84%D9%85%D9%86%D8%A7%D8%B2%D9%84.jpg",
+      "cate_rate":5.0
+    },
+    {
+      "category_id":4,
+      "title":"Studio",
+      "image": "http://www.apartments.com/images/default-source/default-album/studio-apartment.tmb-featuredim.jpeg?sfvrsn=89883b80_0",
+      "cate_rate":3.0
+    },
+    {
+      "category_id":5,
+      "title":"Centers",
+      "image": "https://images.squarespace-cdn.com/content/v1/5f541b4a1fcc337975b12b42/1616124959006-BYJMQDS08QKGTLEVA2B9/Center+Room+One+CIrcle+.jpg",
+      "cate_rate":4.7
+    },
+    {
+      "category_id":6,
+      "title":"Areas and Buildings",
+      "image": "https://media.istockphoto.com/photos/construction-site-with-blue-sky-background-picture-id830720848?k=20&m=830720848&s=612x612&w=0&h=onL6dnmovCzeBTxiJO2b_5I_e4hKZDIxZsP24g4phqc=",
+      "cate_rate":4.5
+    }
+
+  ]
+}

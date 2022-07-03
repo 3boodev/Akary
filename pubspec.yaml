@@ -48,6 +48,7 @@ flutter:
   assets:
    - assets/
    - assets/images/
+   - assets/data/
    - assets/translations/
   # example:
   # fonts:

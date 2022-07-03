@@ -37,7 +37,7 @@ class ProductsScreen extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const ProductCard(),
+            ProductCard(1),
           ],
         ),
       ),
